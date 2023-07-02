@@ -110,29 +110,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 10),
-            Trends(),
-            SizedBox(height: 15),
-            GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .8,
-              ),
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: bookList.length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {},
-                  child: ItemCards(
-                    imagepic: bookList[index].imagepic,
-                    text1: bookList[index].text1,
-                    text2: bookList[index].text2,
-                  ),
-                );
-              },
-            ),
-            Column(
-              children: [
+
+
+            // Trends(),
+            // SizedBox(height: 15),
+            // GridView.builder(
+            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 2,
+            //     childAspectRatio: .8,
+            //   ),
+            //   physics: NeverScrollableScrollPhysics(),
+            //   shrinkWrap: true,
+            //   itemCount: bookList.length,
+            //   itemBuilder: (context, index) {
+            //     return InkWell(
+            //       onTap: () {},
+            //       child: ItemCards(
+            //         imagepic: bookList[index].imagepic,
+            //         text1: bookList[index].text1,
+            //         text2: bookList[index].text2,
+            //       ),
+            //     );
+            //   },
+            // ),
+            // Column(
+            //   children: [
                 // InkWell(
                 //   onTap: () {},
                 //   child: ItemCards(
@@ -181,9 +183,9 @@ class _HomePageState extends State<HomePage> {
                 //     text2: 'Mark Manson',
                 //   ),
                 // ),
-              ],
-            ),
-            SizedBox(height: 20)
+          //     ],
+          //   ),
+          //   SizedBox(height: 20)
           ],
         ),
       ),

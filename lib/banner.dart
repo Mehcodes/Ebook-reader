@@ -1,12 +1,21 @@
+import 'package:ebookapp/screens/book_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:file_picker/file_picker.dart';
 
 import 'color.dart';
 
-class BannerSection extends StatelessWidget {
+class BannerSection extends StatefulWidget {
   const BannerSection({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<BannerSection> createState() => _BannerSectionState();
+}
+
+class _BannerSectionState extends State<BannerSection> {
+  FilePickerResult? filePickerResult;
 
   @override
   Widget build(BuildContext context) {
@@ -73,58 +82,37 @@ class BannerSection extends StatelessWidget {
               ),
               Positioned(
                 bottom: 10,
-                child: Container(
-                  height: 100,
-                  width: 340,
-                  decoration: BoxDecoration(
-                    color: KPrimaryColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: KFourthColor,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/kural.jpeg'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                child: GestureDetector(
+                  onTap: () async {
+                    filePickerResult = await FilePicker.platform.pickFiles(
+                        allowedExtensions: ['pdf'], type: FileType.custom);
+                    if (filePickerResult != null) {
+                      var path = filePickerResult!.files.single.path;
+                      
+
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return BookViewer(path: path);
+                        },
+                      ));
+                    }
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 340,
+                    decoration: BoxDecoration(
+                      color: KPrimaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Load a doument",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25, left: 20),
-                        child: Column(
-                          children: [
-                            Text(
-                              'History of Thiruvalluvar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: KFifthColor,
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 10, right: 30),
-                              child: Text(
-                                'Author: Gaunthama Sannu',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: KFifthColor.withOpacity(0.7),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               )

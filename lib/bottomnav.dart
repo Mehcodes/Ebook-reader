@@ -18,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final screens = [
     HomePage(),
     Search(),
-    BookMark(),
+    // BookMark(),
     Profile(),
   ];
 
@@ -47,13 +47,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
             ),
             label: 'Search',
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/bookmark.svg',
-              color: KFourthColor,
-            ),
-            label: 'Bookmarks',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: SvgPicture.asset(
+          //     'assets/icons/bookmark.svg',
+          //     color: KFourthColor,
+          //   ),
+          //   label: 'Bookmarks',
+          // ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/icons/profile.svg',

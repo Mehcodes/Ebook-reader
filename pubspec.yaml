@@ -37,6 +37,10 @@ dependencies:
   intl: ^0.17.0
   flutter_svg: ^1.1.5
   video_player: ^2.4.7
+  # syncfusion_flutter_pdfviewer: ^21.2.3
+  pdfx: ^2.3.0
+  shared_preferences: ^2.2.0
+  file_picker: ^5.2.10
   
   
 
@@ -74,6 +78,7 @@ flutter:
     - assets/icons/. 
     - assets/english/.
     - assets/intro/.
+    - assets/books/.
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
