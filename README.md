@@ -1,16 +1,29 @@
-# ebookapp
+# E-book Reader Flutter
 
-A new Flutter project.
+![E-book Reader Flutter](ebook_reader_flutter.png)
 
-## Getting Started
+E-book Reader Flutter is a cross-platform mobile application built using the Flutter framework. It allows users to read and manage their collection of e-books on their smartphones or tablets.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- User-friendly interface with intuitive gestures for flipping pages
+- View Pdf files only inside the app.
+- you can import pdf from your phone file explore.
+- you can see your recently read pdf when you left the view mode.
+- Search functionality to quickly find content within e-books, <b> coming soon <b>
+- it displays the header Good Morning and Good Night according to your phone time.
+- Sync reading progress across multiple devices (requires account sign-in) <b> coming soon <b>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+
+## Installation
+
+1. Make sure you have Flutter and Dart SDK installed on your machine. If not, follow the official Flutter installation guide: [Flutter Installation](https://flutter.dev/docs/get-started/install)
+
+2. Clone this repository:
+
+```bash
+git clone https://github.com/your-username/ebook-reader-flutter.git
